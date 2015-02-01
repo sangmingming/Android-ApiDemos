@@ -1,0 +1,69 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.0.1'
+    }
+}
+apply plugin: 'android'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion = "21.1.0"
+    defaultConfig {
+        minSdkVersion 10
+        targetSdkVersion 19
+        multiDexEnabled false
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs']
+        }
+
+    }
+    lintOptions {
+        abortOnError false
+        quiet true
+        ignoreWarnings true
+    }
+    //签名
+    signingConfigs {
+        //你自己的keystore信息
+        release {
+
+        }
+    }
+    buildTypes {
+
+        debug {
+            //signingConfig signingConfigs.release
+            buildConfigField "boolean", "ISDEBUG", "true"
+        }
+
+        release {
+            //signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            shrinkResources true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+        }
+    }
+
+}
+
+dependencies {
+
+}
