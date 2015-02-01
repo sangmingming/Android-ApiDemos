@@ -1,2 +1,0 @@
-/Users/sam/developer/androidCode/AndroidMineDemo/ApiDemos/build/intermediates/classes/AnZhuoShiChang/debug
-/Users/sam/developer/androidCode/AndroidMineDemo/ApiDemos/build/intermediates/pre-dexed/AnZhuoShiChang/debug/renderscript-v8-8f93b6a21ab13db3b7d7567c407819e009692f71.jar
